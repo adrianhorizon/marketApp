@@ -22,7 +22,6 @@ export class MenuComponent implements OnInit, OnDestroy {
   closeSession = 'Cerrar Sesion';
   profileTitle = '(Mi perfil)';
 
-  @Input() sort = '-createdAt';
   @ViewChild('productAccordion') myPanels: MatAccordion;
   products: Products[];
   categories: Categories[];
@@ -81,13 +80,5 @@ export class MenuComponent implements OnInit, OnDestroy {
     this.categoriesService.getCategories().subscribe(
       (categories: Categories[]) => this.categories = categories
     );
-  }
-
-  isLoggedIn() {
-    // return this.authService.isLoggedIn();
-  }
-
-  logout() {
-    this.productsService.navbarCartCount = 0;
   }
 }

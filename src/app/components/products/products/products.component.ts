@@ -29,10 +29,4 @@ export class ProductsComponent implements OnInit {
       select(ProductsStoreSelectors.selectProductsIsLoading)
     );
   }
-
-  onRefresh() {
-    this.store$.dispatch(
-      new ProductstoreActions.LoadRequestAction()
-    );
-  }
 }

@@ -1,14 +1,15 @@
 <ng-container *ngIf="products.length > 0">
   <div class="custom-pipe">
-    <label class="custom-select">Filtrar por disponibilidad:
+    <label class="custom-select">Filtrar por:
       <select [(ngModel)]="selectedBoolean">
         <option disabled [ngValue]="undefined" selected>--</option>
         <option [ngValue]="true">Disponible</option>
         <option [ngValue]="false">No disponible</option>
+        <option value="mayor">mayor cantidad</option>
+        <option value="minor">menor cantidad</option>
       </select>
     </label>
   </div>
-  <pagination-controls (pageChange)="p = $event"></pagination-controls>
   <div class="card-container">
     <div class="card"
       *ngFor="let product of products | searchAvailable: selectedBoolean | paginate: { itemsPerPage: 10, currentPage: p }">
@@ -28,5 +29,5 @@
   <div class="container" *ngIf="products.length === 0">
     <app-products-not-found [title]="messageTitle" [description]="messageDescription"></app-products-not-found>
   </div>
-
+  <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
 </ng-container>

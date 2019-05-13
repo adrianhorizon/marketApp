@@ -6,7 +6,7 @@ import { Routing } from './shared/routing/app.routing';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
-import {NgxPaginationModule} from 'ngx-pagination'; 
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { MenuComponent } from './components/menu/menu.component';
 import { ProductsListComponent } from './components/products/products-list/products-list.component';
@@ -16,7 +16,7 @@ import { CheckoutComponent } from './components/products/checkout/checkout.compo
 import { CartQuantityComponent } from './components/products/cart-quantity/cart-quantity.component';
 import { CartProductsComponent } from './components/products/cart-products/cart-products.component';
 import { ProductsComponent } from './components/products/products/products.component';
-import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 import { SharedModule } from './shared/shared.module';
 import { LoginComponent } from './components/login/login.component';

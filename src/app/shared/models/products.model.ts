@@ -1,6 +1,5 @@
 export interface Products {
     available: boolean;
-    createdAt: string;
     description: string;
     id: string;
     image: string;

@@ -24,8 +24,9 @@
   }
 }
 
-.my-pagination /deep/ .ngx-pagination .current {
-  background: red;
+.my-pagination .ngx-pagination .current {
+  background: $button-gra;
+  border-radius: 50%;
 }
 
 .card-container {

@@ -16,7 +16,7 @@ export class ProductsListComponent implements OnInit {
 
   @Output() refresh = new EventEmitter();
 
-  selectedBoolean: true;
+  selectedBoolean: any;
   p = 1;
 
   constructor(private productsService: ProductsService) { }

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { RootStoreState, ProductsStoreSelectors } from 'src/app/shared/root-store';
+import { ProductsService } from 'src/app/shared/services/Products.service';
 
 @Component({
   selector: 'app-products-detail',
@@ -16,7 +17,10 @@ export class ProductsDetailComponent implements OnInit {
   error$: Observable<any>;
   isLoading$: Observable<boolean>;
 
-  constructor(private route: ActivatedRoute, private store$: Store<RootStoreState.State>) {
+  constructor(
+    private route: ActivatedRoute,
+    private store$: Store<RootStoreState.State>,
+    private productsService: ProductsService) {
     const productIdParam = this.route.snapshot.paramMap.get('id');
     this.productId = productIdParam;
   }
@@ -33,5 +37,9 @@ export class ProductsDetailComponent implements OnInit {
     this.isLoading$ = this.store$.pipe(
       select(ProductsStoreSelectors.selectProductsIsLoading)
     );
+  }
+
+  async addToCart(product: Products) {
+    this.productsService.addToCart(product);
   }
 }
