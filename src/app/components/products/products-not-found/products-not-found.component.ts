@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-products-not-found',
@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products-not-found.component.scss']
 })
 export class ProductsNotFoundComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  // tslint:disable-next-line:no-input-rename
+  @Input('title') title: string;
+  // tslint:disable-next-line:no-input-rename
+  @Input('description') description: string;
+    constructor() { }
+    ngOnInit() {
+    }
 }

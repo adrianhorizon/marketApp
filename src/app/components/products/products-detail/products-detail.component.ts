@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Products } from 'src/app/shared/models/products.model';
+import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import { Store, select } from '@ngrx/store';
+import { RootStoreState, ProductsStoreSelectors } from 'src/app/shared/root-store';
 
 @Component({
   selector: 'app-products-detail',
@@ -6,10 +11,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products-detail.component.scss']
 })
 export class ProductsDetailComponent implements OnInit {
+  productId: string;
+  product$: Observable<Products>;
+  error$: Observable<any>;
+  isLoading$: Observable<boolean>;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private route: ActivatedRoute, private store$: Store<RootStoreState.State>) {
+    const productIdParam = this.route.snapshot.paramMap.get('id');
+    this.productId = productIdParam;
   }
 
+  ngOnInit() {
+    this.product$ = this.store$.pipe(
+      select(ProductsStoreSelectors.selectProductsById(this.productId))
+    );
+
+    this.error$ = this.store$.pipe(
+      select(ProductsStoreSelectors.selectProductsError)
+    );
+
+    this.isLoading$ = this.store$.pipe(
+      select(ProductsStoreSelectors.selectProductsIsLoading)
+    );
+  }
 }

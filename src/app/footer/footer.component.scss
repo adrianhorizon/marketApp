@@ -1,0 +1,210 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+.footer-view {
+  .button-store {
+    background-image: linear-gradient(to right, $button-gra 0%, $button-graBlue 100%);; 
+    border-radius: 8px;
+    text-align: left;
+    word-wrap: break-word;
+    width: 150px;
+    max-width: 100%;
+    color: white;
+  }
+
+  .separate-button { margin-bottom: 16px; }
+
+  .footer-distributed {
+    background-color: $colorPlayStore;
+    color: white;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    text-align: left;
+    padding: 20px 50px;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right {
+    padding: 10px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .footer-distributed .footer-left {
+    width: 30%;
+  }
+
+  .footer-distributed .footer-links {
+    color: $colorSearch;
+    margin: 20px 0 12px;
+    padding: 0;
+  }
+
+  .footer-distributed .footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .footer-distributed .footer-center {
+    width: 35%;
+  }
+
+  .footer-distributed .footer-center i {
+    background-color: $colorSearch;
+    color: $footer-colo;
+    font-size: 25px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 52px;
+    margin: 10px 15px;
+    vertical-align: middle;
+    justify-content: center;
+  }
+
+  .footer-distributed .footer-center i.fa-envelope {
+    font-size: 18px;
+    line-height: 52px;
+  }
+
+  .footer-distributed .footer-center p {
+    display: inline-block;
+    color: $colorSearch;
+    vertical-align: middle;
+    margin: 0;
+  }
+
+  .footer-distributed .footer-center p span {
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2;
+  }
+
+  .footer-distributed .footer-center p a {
+    color: $colorSearch;
+    text-decoration: none;
+    ;
+  }
+
+  .footer-distributed .footer-right {
+    width: 25%;
+  }
+
+  .footer-distributed .footer-company-about {
+    color: $colorSearch;
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .footer-distributed .footer-company-about span {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .footer-distributed .footer-icons {
+    margin-top: 25px;
+  }
+
+  .footer-distributed .footer-icons a {
+    display: inline-block;
+    width: 52px;
+    height: 52px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    color: $colorSearch;
+    text-align: center;
+    line-height: 52px;
+    -o-transition: .6;
+    -ms-transition: .6s;
+    -moz-transition: .6s;
+    -webkit-transition: .6s;
+    transition: .6s;
+  }
+
+  .facebook:hover { background: $colorFacebook; }
+
+  .twitter:hover { background: $colorTwitter; }
+
+  .linkedin:hover { background: $colorLinkedin; }
+
+  .instagram:hover { background: $colorInstagram; }
+
+  .market-center {
+    font-size: 16px;
+    color: $colorSearch;
+    text-align: center;
+  }
+
+  .space-icon { margin-right: 10px; }
+
+  mat-list-item {
+    color: $colorSearch;
+    font-size: 14px;
+  }
+
+  @media (max-width: $layout-xs) {
+
+    .footer-distributed {
+      font: bold 14px;
+    }
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center {
+      display: none;
+    }
+
+    .footer-distributed .footer-right {
+      display: block;
+      width: 100%;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .footer-distributed .footer-center i { margin-left: 0; }
+  }
+
+  .m-linkitem {
+    a {
+      -o-transition: all .4s linear;
+      -ms-transition: all .4s linear;
+      -moz-transition: all .4s linear;
+      -webkit-transition: all .4s linear;
+      transition: all .4s linear;
+      color: $colorSearch;
+      font-size: 15px;
+      font-weight: normal;
+      text-decoration: none;
+      padding-bottom: 8px;
+      background: linear-gradient(to right, rgba(0, 209, 177, 1) 0%, rgba(39, 143, 198, 1) 98%);
+      background-size: 0px 2px;
+      background-repeat: no-repeat;
+      background-position: left 85%;
+      text-shadow: 0;
+
+      &:hover {
+        background-size: 100% 2px;
+      }
+    }
+  }
+  @keyframes backgroundGradient {
+    0% { background-position: 50% 0% }
+    50% { background-position: 50% 100% }
+    100% { background-position: 50% 0% }
+  }
+
+  @keyframes loadBounce {
+    0% { transform: translate(-50%, -50%) scale(0); }
+    40% { transform: translate(-50%, -50%) scale(1.2); }
+    60% { transform: translate(-50%, -50%) scale(1); }
+    80% { transform: translate(-50%, -50%) scale(1.1); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+  }
+}

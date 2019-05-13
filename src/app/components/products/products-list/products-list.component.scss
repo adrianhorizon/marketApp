@@ -1,0 +1,106 @@
+@import '../../../../sass/variables';
+@import '../../../../sass/mixins';
+
+.custom-pipe {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  width: 50%;
+
+  label {
+    font-size: 22px;
+    color: $colorFont;
+  }
+
+  select {
+    height: 25px;
+    color: $colorHover;
+    border: solid 1px $colorHover;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.my-pagination /deep/ .ngx-pagination .current {
+  background: red;
+}
+
+.card-container {
+  display: grid;
+  padding: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 16px;
+
+.size-image {
+ @include card-style-product-image; 
+}
+
+.image-separated { margin-top: 24px; }
+
+.card {
+  @include card-style-product;
+  cursor: pointer;
+  transition: transform 0.5s;
+  -webkit-transition: transform 0.5s;
+  &:hover .button {
+    background-color: $colorHover;
+    border: none;
+    color: lighten($colorHover, 60%);
+    transition: 0.2s all ease;
+  }
+  &:hover .parrafe-style {
+    color: $colorHover;
+  }
+  &:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    .size-image {
+      opacity: 1;
+    }
+  }
+}
+
+.card .button { align-self: end; }
+
+.font-parrafe { 
+  font-size: 25px; 
+  color: $colorGray;
+}
+
+.parrafe-style { 
+  margin-top: 8px;
+  color: $colorWrey;
+}
+
+.description-style {
+  color: $colorWrey;
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
+.div-separated { 
+  margin-top: 24px; 
+  text-align: center;
+  &:hover .font-parrafe { color: $colorPrimary; }
+  &:hover .parrafe-style { color: $hover_link; }
+}
+
+.font-description {
+  font-size: 15px;
+  color: $U;
+}
+
+.button {
+  width: 100%;
+  border-radius: 10px;
+  color: $colorGray;
+}
+
+a { text-decoration: none; }
+
+img { width: 100%; }
+
+}

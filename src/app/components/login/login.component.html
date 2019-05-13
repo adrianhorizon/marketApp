@@ -1,0 +1,31 @@
+<div class="login-view">
+  <div class="login-container">
+    <div class="avatar-container">
+      <img class="avatar-img avatar-frame-off-line"
+        src="http://anime.es/wp-content/uploads/2013/05/Chi-s-sweet-home1.jpg" alt="generic_avatar">
+    </div>
+    <div class="text-contanier">
+      <div class="login-input">
+        <br>
+        <h1 *ngIf="loginRegister == 'login'" class="header-container">Iniciar sesión</h1>
+        <h1 *ngIf="loginRegister == 'register'" class="header-container">Registrate</h1>
+        <p *ngIf="loginRegister == 'register'" class="parrafe-container">Ya tienes una cuenta<a
+            (click)="loginRegister = 'login'" class="links-container"> ingresa aqui</a></p>
+        <p *ngIf="loginRegister == 'login'" class="parrafe-container">No tienes una cuenta<a
+            (click)="loginRegister = 'register'" class="links-container"> Registrate</a></p>
+        <a class="header-container" [routerLink]="[ '/products']">Volver a la tienda</a>
+        <div>
+          <input class="input-container" type="text" [(ngModel)]="email" placeholder="Ingrese email"><br>
+          <input class="input-container" type="password" [(ngModel)]="password" placeholder="Ingrese contraseña">
+          <input class="input-container" type="text" [(ngModel)]="userName" placeholder="Ingrese usuario"
+            *ngIf="loginRegister == 'register'">
+          <button *ngIf="loginRegister == 'login'" class="button-login" type="button" (click)="login()">Iniciar
+            sesión</button>
+          <button *ngIf="loginRegister == 'register'" class="button-register" type="button"
+            (click)="register()">Registrate</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
