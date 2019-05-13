@@ -90,6 +90,7 @@
 
     <mat-sidenav-content>
       <router-outlet></router-outlet>
+      <app-footer *ngIf="router.url != '/login'"></app-footer>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
