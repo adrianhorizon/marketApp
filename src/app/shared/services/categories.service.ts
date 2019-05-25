@@ -15,7 +15,7 @@ export class CategoriesService {
   constructor(
     private http: HttpClient,
     private router: Router) {
-    this.apiUrl = environment.categoriesApi + 'categories';
+    this.apiUrl = environment.categoriesApi;
   }
 
   getCategories(): Observable<Categories[]> {

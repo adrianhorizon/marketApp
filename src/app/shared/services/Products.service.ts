@@ -13,7 +13,7 @@ export class ProductsService {
 
   constructor(
     private http: HttpClient) {
-    this.api = environment.productsApi + 'products';
+    this.api = environment.productsApi;
    }
 
   index(): Observable<Products[]> {
