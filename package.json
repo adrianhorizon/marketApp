@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "concurrently \"npm run server\" \"ng serve --open\"",
     "start:yarn": "concurrently \"ng serve --open\" \"yarn server\"",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "server": "concurrently \"npm run server-1\" \"npm run server-2\"",
     "server-1": "json-server --watch server/categories.json ",
